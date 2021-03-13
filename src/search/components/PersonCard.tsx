@@ -38,7 +38,7 @@ export const PersonCard = () => {
   }
 
   return (
-    <Card className={styles.root}>
+    <Card className={styles.root} data-testid="person-card">
       <List>
         {
           Object.keys(person).map((key) => (
