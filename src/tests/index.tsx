@@ -4,7 +4,8 @@ import { AppDispatch, RootState } from '../store';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 
-const createMockStore = configureStore<DeepPartial<RootState>, AppDispatch>();
+
+export const createMockStore = configureStore<DeepPartial<RootState>, AppDispatch>();
 
 type RenderOptions = Parameters<typeof rtlRender>[1] & {
   initialState?: DeepPartial<RootState>;

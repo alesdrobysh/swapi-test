@@ -46,15 +46,14 @@ const searchSlice = createSlice({
 export const searchEpic = (action$: Observable<Action>) => action$.pipe(
   filter(searchSlice.actions.searchStart.match),
   debounceTime(200),
-  switchMap(({ payload }) => ajax
-    .getJSON(`https://swapi.dev/api/people/?search=${payload}`)
+  switchMap(({ payload }) => ajax(`https://swapi.dev/api/people/?search=${payload}`)
     .pipe(
-      map((data) => transformData(data as Response)),
+      map(({ response }) => transformData(response as Response)),
       map(searchSlice.actions.searchComplete),
       catchError((error) => of(searchSlice.actions.searchError(error)))
     )
   )
 );
 
-export const { searchStart, select } = searchSlice.actions;
+export const { searchStart, searchComplete, searchError, select } = searchSlice.actions;
 export const searchReducer = searchSlice.reducer;
