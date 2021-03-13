@@ -36,6 +36,7 @@ export const SearchField = () => {
     onChange={onChange}
     options={options}
     getOptionLabel={(option) => option.name}
+    getOptionSelected={(option, value) => option.name === value.name}
     renderInput={(params) =>
       <TextField
         {...params}

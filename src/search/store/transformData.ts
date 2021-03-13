@@ -15,7 +15,7 @@ export function transformData(data: Response): TransformedResponse {
       hairColor: item.hair_color,
       skinColor: item.skin_color,
       eyeColor: item.eye_color,
-      birthYear: Number(item.birth_year),
+      birthYear: item.birth_year,
       gender: item.gender,
     }))
   };

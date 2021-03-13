@@ -19,6 +19,6 @@ export type Person = {
   hairColor: string;
   skinColor: string;
   eyeColor: string;
-  birthYear: number;
+  birthYear: string;
   gender: string;
 }
