@@ -13,3 +13,4 @@ export const store = configureStore({
 epicMiddleware.run(searchEpic);
 
 export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch
